@@ -42,10 +42,13 @@ body {
 }
 
 main {
+    position: relative;
     margin: 30px auto ;
     width: 794px;
     height: 297mm;
     background: rgb(239, 242, 250);
+    zoom:65%;
+    margin: auto auto auto auto;
 }
 
 .top-banner {
@@ -113,18 +116,9 @@ main {
     "transi empty empty";
     justify-items: start;
 }
-
 .first {
-    /* display: grid;
-    grid-template-columns: 20px auto auto;
-    grid-template-rows: auto auto 20px;
-    grid-template-areas:
-    "point name date"
-    "li descr descr" 
-    "li empty empty"; */
     margin-top: 20px;
 }
-
 .last {
     grid-template-rows: auto auto none;
     grid-template-areas:
@@ -195,7 +189,7 @@ main {
     position: relative;
     z-index : 1;
     padding-bottom: 9px;
-    margin-top: 40px;
+    margin-top: 30px;
 }
 
 
@@ -224,13 +218,49 @@ main {
     display: flex;
     flex-direction: column;
     border: 4px solid #011960;
-    border-radius: 15px;
+    border-radius: 20px;
     font-family: DM_Sans_Regular;
     font-size: 0.913rem;
     padding: 20px 14px 40px 14px;
     align-items: center;
     margin-right: 24px;
     text-align: justify;
+}
+
+.skills {
+    display: flex;
+    flex-direction: column;
+    background-color: #d4e1ff;
+    height: 310px;
+    font-family: DM_Sans_Regular;
+    font-size: 0.91rem;
+    justify-content: space-evenly;
+    padding: 0 40px 0 24px;
+}
+.skills h2 {
+    font-family: Josefin_Sans_Bold;
+    font-size: 1.08rem;
+    margin-top: 0;
+}
+.skills p {
+    border-bottom: 1px solid #cbc8c8;
+    padding-bottom: 10px;
+}
+
+.bottom {
+    position: absolute;
+    bottom: 0;
+    background-color: #011960;
+    height: 30px;
+    width: 100%;
+    align-content: center;
+}
+
+.bottom p {
+    font-family: DM_Sans_Regular;
+    color: #d4e1ff;
+    font-size: 0.83rem;
+    margin-left: 10px;
 }
 
 #experience {
@@ -240,12 +270,6 @@ main {
     align-items: stretch;
     margin-right: 60px;
 }
-
-/* #person {
-    grid-area: pro;
-    display: flex;
-    flex-direction: column;
-} */
 
 #name {
     font-family: Josefin_Sans_Bold;
@@ -275,7 +299,7 @@ img {
 #titre_hobbies {
     margin-top: 0;
     font-size: 1rem;
-    align-self: center;
+    text-align: center;
 }
 #titre_hobbies::before {
     border-bottom:0;
@@ -295,4 +319,5 @@ img {
 
 ul {
     padding-left: 20px;
+    font-size: 0.83rem;
 }
