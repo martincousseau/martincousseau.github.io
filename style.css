@@ -1,25 +1,323 @@
-body{
-    background: #f2f2f2;
+/* Fonts */
+
+@font-face {
+    font-family: Josefin_Sans_Bold;
+    src: url(./assets/fonts/Josefin_Sans/static/JosefinSans-Bold.ttf);
+}
+@font-face {
+    font-family: Josefin_Sans_Light;
+    src: url(./assets/fonts/Josefin_Sans/static/JosefinSans-Light.ttf);
+}
+@font-face {
+    font-family: Josefin_Sans_Regular;
+    src: url(./assets/fonts/Josefin_Sans/static/JosefinSans-Regular.ttf);
 }
 
-header{
-    background: #011960;
+
+@font-face {
+    font-family: DM_Sans_Regular;
+    src: url(./assets/fonts/DM_Sans/static/DMSans-Regular.ttf);
+}
+@font-face {
+    font-family: DM_Sans_SemiBold;
+    src: url(./assets/fonts/DM_Sans/static/DMSans-SemiBold.ttf);
+}
+@font-face {
+    font-family: DM_Sans_SemiBold;
+    src: url(./assets/fonts/DM_Sans/static/DMSans-SemiBold.ttf);
 }
 
-main{
-    margin-top: 50px;
-    margin-left: auto;
-    margin-right: auto;
-    width: 210mm;
+
+* {
+    /* border: 2px solid red; */
+
+        /* Suppression of default block margin */
+        margin-block-start: 0;
+        margin-block-end: 0;
+}
+
+
+body {
+    background: #cacaca;
+}
+
+main {
+    position: relative;
+    margin: 30px auto ;
+    width: 794px;
     height: 297mm;
-    background: white;
+    background: rgb(239, 242, 250);
+    zoom:65%;
+    margin: auto auto auto auto;
 }
 
-.container{
-    border : 2px solid magenta;
+.top-banner {
+    background: #011960;
+    display: grid;
+    grid-template-columns: auto 153px;
+    grid-template-areas:
+    "te pi";
+    width: 100%;
+    height: 153px;
+    
+    font-family: Josefin_Sans_Light;
+    color: #ffffff;
+    font-size: 1rem;
+}
+
+.text {
+    grid-area: te;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.information {
+    display: flex;
+    flex-direction: column;
+    justify-content:space-evenly;
+
+    letter-spacing: 3px;
+    margin-left: 26px;
+}
+
+.contact {
+    display: flex;
+    flex-direction: column;
+    justify-content:space-evenly;
+    align-items: flex-end;
+    margin-right: 26px;
+}
+
+.container {
+    font-family: DM_Sans_Regular;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.content {
+    display: grid;
+    grid-template-columns: 460px 300px;
+    grid-template-areas:
+    "exp pro";
+    margin-top: 26px;
+    margin-left: 34px;
+}
+
+.item {
+    display: grid;
+    grid-template-columns: 20px auto auto;
+    font-family: DM_Sans_SemiBold;
+    grid-template-areas:
+    "point name date"
+    "li descr descr"
+    "transi empty empty";
+    justify-items: start;
+}
+.first {
+    margin-top: 20px;
+}
+.last {
+    grid-template-rows: auto auto none;
+    grid-template-areas:
+    "point name date"
+    "li descr descr"; 
+}
+
+.line_a {
+    width: 1px;
+    height: 100%;
+    align-self: end;
+    background-color: #011960;
+    grid-area: point;
+    justify-self: center;
+    transform: translateX(-10px);
+}
+
+.line_b {
+    width: 1px;
+    height: 100%;
+    background-color: #011960;
+    grid-area: li;
+    justify-self: center;
+    transform: translateX(-10px);
+}
+
+.line_transi {
+    width: 1px;
+    height: 20px;
+    background-color: #011960;
+    transform: translateX(-10px);
+    justify-self: center;
+    grid-area: transi;
+}
+
+.last .line_transi {
+    height: 0;
+}
+
+.first .line_a {
+    height: 50%;
+}
+
+.name {
+    grid-area: name;
+    font-size: 0.9125rem;
+    letter-spacing: 2px;
+}
+
+.date {
+    grid-area: date;
+    justify-self: end;
+    font-size: 0.9125rem;
+}
+
+.descr {
+    grid-area: descr;
+    font-size: 0.83rem;
+    font-family: DM_Sans_Regular;
+    margin-top: 5px;
+}
+
+.underline {
+    font-family: Josefin_Sans_Regular;
+    font-size: 1.1rem;
+    color: #372b2b;
+    letter-spacing: 5px;
+    position: relative;
+    z-index : 1;
+    padding-bottom: 9px;
+    margin-top: 30px;
 }
 
 
-#intitule{
-    background: #d4e1ff;
+.underline:before {
+    content : "";
+    position: absolute;
+    left    : 0;
+    bottom  : 0;
+    height  : 1px;
+    width   : 70px; 
+    border-bottom:2px solid #011960;
+}
+
+.circle {
+    width: 15px;
+    height: 15px;
+    background-color: #011960;
+    border-radius: 150px;
+    grid-area: point;
+    align-self: center;
+    justify-self: center;
+    transform: translateX(-10px);
+}
+
+.border_frame {
+    display: flex;
+    flex-direction: column;
+    border: 4px solid #011960;
+    border-radius: 20px;
+    font-family: DM_Sans_Regular;
+    font-size: 0.913rem;
+    padding: 20px 14px 40px 14px;
+    align-items: center;
+    margin-right: 24px;
+    text-align: justify;
+}
+
+.skills {
+    display: flex;
+    flex-direction: column;
+    background-color: #d4e1ff;
+    height: 310px;
+    font-family: DM_Sans_Regular;
+    font-size: 0.91rem;
+    justify-content: space-evenly;
+    padding: 0 40px 0 24px;
+}
+.skills h2 {
+    font-family: Josefin_Sans_Bold;
+    font-size: 1.08rem;
+    margin-top: 0;
+}
+.skills p {
+    border-bottom: 1px solid #cbc8c8;
+    padding-bottom: 10px;
+}
+
+.bottom {
+    position: absolute;
+    bottom: 0;
+    background-color: #011960;
+    height: 30px;
+    width: 100%;
+    align-content: center;
+}
+
+.bottom p {
+    font-family: DM_Sans_Regular;
+    color: #d4e1ff;
+    font-size: 0.83rem;
+    margin-left: 10px;
+}
+
+#experience {
+    grid-area: exp;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    margin-right: 60px;
+}
+
+#name {
+    font-family: Josefin_Sans_Bold;
+    font-size: 1.65rem;
+    letter-spacing: 4px;
+}
+
+
+img {
+    grid-area: pi;
+}
+
+#person {
+    grid-area: pro;
+    display: flex;
+    flex-direction: column;
+}
+
+#titre_accroche {
+    margin-top: 0;
+    font-size: 1rem;
+}
+#titre_accroche::before {
+    border-bottom:0;
+}
+
+#titre_hobbies {
+    margin-top: 0;
+    font-size: 1rem;
+    text-align: center;
+}
+#titre_hobbies::before {
+    border-bottom:0;
+}
+
+
+#intitule {
+    background-color: #d4e1ff;
+    color: #372b2b;
+    font-size: 1.2rem;
+    height:76px;
+}
+
+#stage h2{
+    margin-top: 0;
+}
+
+ul {
+    padding-left: 20px;
+    font-size: 0.83rem;
 }
